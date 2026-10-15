@@ -9,6 +9,7 @@
       font-family: Arial;
       max-width: 600px;
       margin: 2rem auto;
+      padding: 0 1rem;
     }
     .perfil {
       display: flex;
@@ -25,6 +26,20 @@
     .oculto {
       display: none;
     }
+    .controles {
+      margin-bottom: 1rem;
+    }
+    #btn-cargar-mas {
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: gray;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -35,12 +50,34 @@
     <button type="submit" id="btn-buscar">Buscar</button>
   </form>
 
+  <!-- Actividad 2: Selector de ordenamiento -->
+  <div class="controles">
+    <label for="select-orden">Ordenar repositorios por:</label>
+    <select id="select-orden">
+      <option value="updated">Última actualización</option>
+      <option value="created">Fecha de creación</option>
+      <option value="full_name">Nombre</option>
+    </select>
+  </div>
+
   <p id="estado"></p>
 
   <section id="perfil" class="perfil oculto"></section>
 
   <h2 id="titulo-repos" class="oculto">Repositorios recientes</h2>
   <ul id="repos"></ul>
+
+  <!-- Actividad 3: Botón para cargar más repositorios -->
+  <button id="btn-cargar-mas" class="oculto">Cargar más</button>
+
+  <!-- Actividad 2: Resumen de lenguajes más usados -->
+  <section id="resumen" class="oculto">
+    <h3>Resumen de lenguajes más usados</h3>
+    <div id="resumen-lenguajes"></div>
+  </section>
+
+  <!-- Actividad 3: Pie de página con el límite de peticiones -->
+  <footer id="rate-limit"></footer>
 
   <script src="app.js"></script>
 </body>
